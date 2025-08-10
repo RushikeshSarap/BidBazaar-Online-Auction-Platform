@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buyer Dashboard</title>
+    <link rel="stylesheet" href="../css/BuyerLandingPageStyles.css" />
+    <script defer src="../javascript/BuyerLandingPageScript.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer src="../javascript/SidebarScript.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  </head>
+  <body>
+    <aside class="sidebar" id="sidebar">
+      <button id="toggleBtn">☰</button>
+      <nav>
+        <div class="imp-options">
+          <a href="BuyerLandingPage.html">Dashboard</a>
+          <a href="Profile1.html">Profile</a>
+          <a href="MarketPlace.html">Marketplace</a>
+          <a href="Auction.html">Auction</a>
+        </div>
+        <hr><hr><hr>
+        <div class="unimp-options">
+          <a>About Us</a>
+          <a>Contact Us</a>
+          <a>T&amp;C</a>
+          <a>Privacy Policy</a>
+          <a>Help</a>
+          <a>Social Media Links</a>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="content">
+      <header>
+        <h1>Marketplace</h1>
+        <div>
+          <span>Notification</span>
+          <i class="fa-solid fa-bell"></i>
+          <a href="HomePage.html" style="margin-left: 20px; color: black; text-decoration: none">
+            LogOut
+          </a>
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+      </header>
+
+      <div id="category" class="section">
+        <h2>Section: Categories</h2>
+        <div class="gallery js-flickity">
+          <div class="gallery-cell" style=" content: url(../images/Categories/1.png);">Electronics</div>
+          <div class="gallery-cell" style=" content: url(../images/Categories/2.jpg)"></div>
+          <div class="gallery-cell" style=" content: url(../images/Categories/3.jpg );"></div>
+        </div>
+      </div>
+
+      <div class="section" id="recommendedProducts">
+        <h2>Section: Recommended Products</h2>
+        <div class="gallery js-flickity">
+          <div class="gallery-cell" style=" content: url(../images/Recommended/1.jpg );"></div>
+          <div class="gallery-cell" style=" content: url(../images/Recommended/2.jpg );"></div>
+          <div class="gallery-cell" style=" content: url(../images/Recommended/3.jpg );"></div>
+          <div class="gallery-cell" style=" content: url(../images/Recommended/4.jpg );"></div>
+          <div class="gallery-cell" style=" content: url(../images/Recommended/5.jpg );"></div>
+        </div>
+      </div>
+
+      <!-- <div class="section" id="topSelingProducts">
+        <h2>Section: Top Selling Products</h2>
+        <div class="gallery js-flickity">
+          <div class="gallery-cell" style=" content: url(../images/TopSellingProducts/1.jpg );"></div>
+          <div class="gallery-cell" style=" content: url(../images/electronics.png);"></div>
+          <div class="gallery-cell" style=" content: url(../images/electronics.png);"></div>
+          <div class="gallery-cell" style=" content: url(../images/electronics.png);"></div>
+          <div class="gallery-cell" style=" content: url(../images/electronics.png);"></div>
+        </div>
+      </div> -->
+    </div>
+  </body>
+</html>

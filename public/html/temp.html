@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auction Management System</title>
+  <link rel="stylesheet" href="../css/temp.css">
+  <script defer src="../javascript/temp.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Auction Products</h1>
+    <div class="product-list">
+      <div class="product" onclick="startAuction('Antique Vase', 100)">Antique Vase</div>
+      <div class="product" onclick="startAuction('Vintage Watch', 150)">Vintage Watch</div>
+      <div class="product" onclick="startAuction('Old Painting', 200)">Old Painting</div>
+    </div>
+
+    <div id="auction-section" style="display:none;">
+      <h2 id="product-name"></h2>
+      <p id="starting-price"></p>
+      <p id="current-bid"></p>
+      <input type="number" id="bid-amount" placeholder="Enter your bid">
+      <button onclick="placeBid()">Place Bid</button>
+
+      <div id="bid-history">
+        <h3>Bid History</h3>
+        <ul id="bid-history-list"></ul>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>

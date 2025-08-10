@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Marketplace | Auction App</title>
+  <link rel="stylesheet" href="../css/MarketPlaceStyles.css">
+  <link rel="stylesheet" href="../css/AuctionStyles.css">
+  <script defer src="../javascript/SidebarScript.js"></script>
+  <script defer src="../javascript/MarketPlaceScript.js"></script>
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <button id="toggleBtn">☰</button>
+    <nav>
+      <div class="imp-options">
+        <a href="BuyerLandingPage.html">Dashboard</a>
+        <a href="Profile1.html">Profile</a>
+        <a href="MarketPlace.html">Marketplace</a>
+        <a href="Auction.html">Auction</a>
+      </div>
+      <hr><hr><hr>
+      <div class="unimp-options">
+        <a>About Us</a>
+        <a>Contact Us</a>
+        <a>T&amp;C</a>
+        <a>Privacy Policy</a>
+        <a>Help</a>
+        <a>Social Media Links</a>
+      </div>
+    </nav>
+  </aside>
+  
+
+  <main class="container" id="marketplace-container">
+    <!-- Products will be loaded here -->
+  </main>
+
+
+  <script>
+    window.onload = () => {
+      renderMarketplace();
+    };
+  </script>
+</body>
+</html>

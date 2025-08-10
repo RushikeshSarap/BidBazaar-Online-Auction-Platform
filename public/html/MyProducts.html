@@ -1,0 +1,40 @@
+Products.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Products</title>
+  <link rel="stylesheet" href="../css/dataStyles.css">
+</head>
+<body>
+  <header>
+    <h1>My Products</h1>
+    <nav>
+      <a href="index.html">Marketplace</a>
+      <a href="products.html">My Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="transactions.html">Transactions</a>
+    </nav>
+  </header>
+
+  <main class="container" id="product-list"></main>
+
+  <script src="../javascript/data.js"></script>
+  <script>
+    loadLocalStorage();
+    const container = document.getElementById("product-list");
+    const myProducts = JSON.parse(localStorage.getItem("myProducts"));
+    myProducts.forEach(product => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <h3>${product.name}</h3>
+        <p>Price: ₹${product.price}</p>
+        <p>Bids: ${product.bids}</p>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>

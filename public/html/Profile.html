@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Profile Page</title>
+  <link rel="stylesheet" href="../css/ProfileStyles.css">
+  <script defer src="../javascript/ProfileScript.js"></script>
+</head>
+<body>
+
+
+  <div class="container">
+
+    <aside id="sidebar" class="sidebar">
+      <button id="toggleBtn">☰</button>
+      <nav>
+        <ul>
+          <li>
+            <a href="SellerLandingPage.html">Dashboard</a>
+          </li>
+          <li>
+            <a href="Profile.html">Profile</a>
+          </li>
+          <li>
+            <a href="AddProduct.html">Add Product</a>
+          </li>
+          <br>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>T&C</li>
+          <li>Privacy Policy</li>
+          <li>Help</li>
+          <li>Social Media Links</li>
+        </ul>
+      </nav>
+    </aside>
+
+
+    <div class="main-content">
+      <header>
+        <h2>Profile</h2>
+        <div class="header-right">
+          <a href="HomePage.html" onclick="logout()">Logout</a>
+        </div>
+      </header>
+
+      <div class="profile-section">
+        <div class="box profile-pic"></div>
+        <div class="box">About User</div>
+      </div>
+
+      <div class="box uploaded-details">
+        <h3>Uploaded Details</h3>
+        <p>Details of uploaded products or data shown here...</p>
+      </div>
+
+      <div class="upload-section">
+        <h3>Upload Section</h3>
+        <input type="file" id="fileUpload">
+        <button class="btn" onclick="uploadFile()">Upload</button>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

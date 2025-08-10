@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auction System</title>
+  <link rel="stylesheet" href="../css/AuctionStyles.css">
+  <script defer src="../javascript/SidebarScript.js"></script>
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <button id="toggleBtn">☰</button>
+    <nav>
+      <div class="imp-options">
+        <a href="BuyerLandingPage.html">Dashboard</a>
+        <a href="Profile1.html">Profile</a>
+        <a href="MarketPlace.html">Marketplace</a>
+        <a href="Auction.html">Auction</a>
+      </div>
+      <hr><hr><hr>
+      <div class="unimp-options">
+        <a>About Us</a>
+        <a>Contact Us</a>
+        <a>T&amp;C</a>
+        <a>Privacy Policy</a>
+        <a>Help</a>
+        <a>Social Media Links</a>
+      </div>
+    </nav>
+  </aside>
+  <main class="auction-container">
+    <h1>Online Auction</h1>
+
+    <div class="item">
+      <h2>Item: Rare Antique Vase</h2>
+      <p>Starting Price: ₹1000</p>
+      <p id="timer">Time Left: <span id="countdown"></span></p>
+    </div>
+
+    <div class="bidding">
+      <h3>Current Highest Bid: ₹<span id="highestBid">1000</span></h3>
+      <input type="number" id="bidAmount" placeholder="Enter your bid" />
+      <button onclick="placeBid()">Place Bid</button>
+      <p id="message"></p>
+    </div>
+
+    <div class="bid-log">
+      <h3>Bid Log:</h3>
+      <ul id="bidLog"></ul>
+    </div>
+  </main>
+  <a href="BuyerLandingPage.html">back</a>
+
+  <script src="../javascript/AuctionScript.js"></script>
+</body>
+</html>

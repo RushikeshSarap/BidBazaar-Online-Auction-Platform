@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up - Auction System</title>
+  <link rel="stylesheet" href="../css/SignupStyles.css">
+  <script defer src="../javascript/SignupScript.js"></script>
+</head>
+<body>
+  <div class="container">
+    <form id="signupForm">
+      <h2>Sign Up</h2>
+      <label>Role:</label><br>
+      <input type="radio" name="role" value="buyer" required> Buyer
+      <input type="radio" name="role" value="seller" required> Seller <br><br>
+
+      <label>First Name:</label>
+      <input type="text" name="firstName" required><br>
+
+      <label>Surname Name:</label>
+      <input type="text" name="lastName" required><br>
+
+      <label>Username:</label>
+      <input type="text" name="username" required><br>
+
+      <label>Password:</label>
+      <input type="password" id="password" name="password" required><br>
+
+      <label>Mobile No:</label>
+      <input type="tel" pattern="[0-9]{10}" name="mobile" required><br>
+
+      <label>Email id:</label>
+      <input type="email" required><br>
+
+      <label>Address:</label>
+      <textarea rows="3" name="address" required></textarea><br>
+
+      <label>PAN or Aadhar No:</label>
+      <input type="text" name="idnumber" required><br>
+
+      <label>Upload Photo (optional):</label>
+      <input type="file" name="photo" accept="image/*"><br><br>
+
+      <label>Captcha: <span id="captcha"></span></label>
+      <input type="text" id="captchaInput" placeholder="Enter Captcha" required><br>
+
+      <button type="submit">Register</button>
+      <a href="HomePage.html">Back</a>
+    </form>
+  </div>
+</body>
+</html>

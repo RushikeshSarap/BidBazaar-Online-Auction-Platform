@@ -1,0 +1,97 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .container {
+    background: white;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  label {
+    margin-left: 60px;
+    display: block;
+    margin-top: 10px;
+    color: #555;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="file"],
+  textarea,
+  select {
+    width: 40%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-left: 80px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #005fa3;
+  }
+  
+  .sidebar {
+    width: 260px;
+    background-color:  #333;
+    color: #fff;
+    text-decoration: #fff;
+    padding: 10px 0px 20px 10px;
+    transition: width 0.3s ease;
+    overflow-y: auto;
+  }
+  
+  .sidebar.collapsed {
+    width: 60px;
+  }
+  
+  .sidebar #toggleBtn {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: #ccc;
+  }
+  
+  .sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar nav ul li{
+    padding: 10px 5px;
+    margin-bottom: 10;
+    cursor: pointer;
+  }
+
+  .sidebar nav ul li a{
+    text-decoration: none;
+    color: #fff;
+  }
