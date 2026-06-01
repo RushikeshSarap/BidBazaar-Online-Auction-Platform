@@ -9,7 +9,7 @@ app.get('/run-script', (req, res) => {
             console.error(`exec error: ${error}`);
             return res.status(500).send(error.message);
         }
-        console.log(`stdout: ${stdout}`);
+        log(`stdout: ${stdout}`);
         console.error(`stderr: ${stderr}`);
         res.send(stdout);
     });
