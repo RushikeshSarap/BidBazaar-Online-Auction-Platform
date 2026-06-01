@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/AddProductStyles.css">
     <script defer src="../javascript/SidebarScript.js"></script>
     <script defer src="../javascript/SidebarScript.js"></script>
+    <script defer src="../javascript/AddProductScript.js"></script>
   </head>
   <body>
     <aside id="sidebar" class="sidebar">
@@ -33,12 +34,12 @@
 
     <main class="main-content">
       <h2>Add a Product</h2>
-      <form id="productForm">
+      <form id="productForm" enctype="multipart/form-data">
         <label>Product Title:</label>
-        <input type="text" required /><br />
+        <input type="text" name="title" required /><br />
 
         <label>Category:</label>
-        <select required>
+        <select name="category" required>
           <option value="">Select</option>
           <option>Electronics</option>
           <option>Clothing</option>
@@ -47,13 +48,13 @@
         ><br />
 
         <label>Upload Image:</label>
-        <input type="file" accept="image/*" required /><br />
+        <input type="file" name="image" accept="image/*" required /><br />
 
         <label>Starting Price:</label>
-        <input type="number" min="1" required /><br />
+        <input type="number" name="price" min="1" required /><br />
 
         <label>Description:</label>
-        <textarea rows="4" required></textarea><br />
+        <textarea name="description" rows="4" required></textarea><br />
 
         <button type="submit">Add Product</button>
       </form>

@@ -41,7 +41,7 @@ app.post('/api/login', async (req, res) => {
     return res.json({ success: false, message: 'Missing credentials' });
   }
 
-  const sql = 'SELECT "UserPassword", "UserRole" FROM "User_dtls" WHERE "UserUserName" = $1';
+  const sql = 'SELECT "UserId", "UserPassword", "UserRole" FROM "User_dtls" WHERE "UserUserName" = $1';
   try {
     const result = await db.query(sql, [username]);
 
@@ -49,7 +49,7 @@ app.post('/api/login', async (req, res) => {
       return res.json({ success: false, message: 'Invalid username' });
     }
 
-    const { UserPassword, UserRole } = result.rows[0];
+    const { UserId, UserPassword, UserRole } = result.rows[0];
     if (UserPassword !== password) {
       return res.json({ success: false, message: 'Incorrect password' });
     }
@@ -58,7 +58,13 @@ app.post('/api/login', async (req, res) => {
       return res.json({ success: false, message: 'Incorrect user type' });
     }
 
-    return res.json({ success: true });
+    const token = jwt.sign(
+      { id: UserId || username, role: UserRole },
+      process.env.JWT_SECRET || 'fallback_secret',
+      { expiresIn: '24h' }
+    );
+
+    return res.json({ success: true, token, role: UserRole });
   } catch (err) {
     console.error(err);
     return res.status(500).json({ success: false, message: 'Server error' });
@@ -132,10 +138,12 @@ const upload1 = multer({ storage: storage });
 
 
 function verifyToken(req, res, next) {
-  const token = req.headers['authorization'];
-  if (!token) return res.status(403).json({ message: 'No token provided.' });
+  const bearerHeader = req.headers['authorization'];
+  if (!bearerHeader) return res.status(403).json({ message: 'No token provided.' });
 
-  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+  const token = bearerHeader.startsWith('Bearer ') ? bearerHeader.split(' ')[1] : bearerHeader;
+
+  jwt.verify(token, process.env.JWT_SECRET || 'fallback_secret', (err, decoded) => {
     if (err) return res.status(401).json({ message: 'Failed to authenticate token.' });
     req.userId = decoded.id;
     next();
@@ -143,7 +151,7 @@ function verifyToken(req, res, next) {
 }
 
 // POST /add-product route
-app.post('/add-product', verifyToken, upload1.single('image'), async (req, res) => {
+app.post('/api/add-product', verifyToken, upload1.single('image'), async (req, res) => {
   const { title, category, price, description } = req.body;
   const imageUrl = req.file ? req.file.path : null;
   const sellerId = req.userId; // from JWT
