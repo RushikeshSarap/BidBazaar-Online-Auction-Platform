@@ -1,6 +1,9 @@
 # Node modules
 node_modules/
 
+# Generated local seed preview images
+server/uploads/demo-seed/
+
 # Environment variables
 .env
 .env.*
